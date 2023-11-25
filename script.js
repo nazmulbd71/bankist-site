@@ -29,3 +29,16 @@ btnScrollTo.addEventListener("click", function (e) {
   const s1Scroll = scrollSection1.getBoundingClientRect();
   scrollSection1.scrollIntoView({ behavior: "smooth" });
 });
+
+// all nav link smooth scroll
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // matching strategy
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    console.log(id);
+
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});
